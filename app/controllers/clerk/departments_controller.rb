@@ -3,20 +3,19 @@ class Clerk::DepartmentsController < ApplicationController
 
   def index
     @departments = Department.all
-    respond_with(@departments)
+    respond_with(:referral, @departments)
   end
 
   def show
-    respond_with(@department)
+    respond_with(:clerk, @department)
   end
 
   def new
     @department = Department.new
-    respond_with(@department)
+    respond_with(:clerk, @department)
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @department = Department.create(department_params)

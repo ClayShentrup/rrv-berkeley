@@ -39,7 +39,7 @@ RSpec.describe(Clerk::DepartmentsController) do
   describe 'POST #create' do
     context 'with valid params' do
       it 'creates a new Department' do
-        expect { post :create, params: { department: valid_attributes} }
+        expect { post :create, params: { department: valid_attributes } }
           .to change(Department, :count).by(1)
       end
 

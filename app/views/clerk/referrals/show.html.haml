@@ -1,0 +1,48 @@
+%p#notice= notice
+
+%p
+  %b Referral type:
+  = @referral.referral_type
+%p
+  %b Prioritization year:
+  = @referral.prioritization_year
+%p
+  %b Meeting date:
+  = @referral.meeting_date
+%p
+  %b Agenda item number:
+  = @referral.agenda_item_number
+%p
+  %b Title:
+  = @referral.title
+%p
+  %b Recommendation:
+  = @referral.recommendation
+%p
+  %b Sponsor(s):
+  = @referral.sponsors
+%p
+  %b Department:
+  = @referral.department_name
+%p
+  %b Notes:
+  = @referral.notes
+%p
+  %b Completed on:
+  = @referral.completed_on
+%p
+  %b First year rank:
+  = @referral.first_year_rank
+%p
+  %b Tracking number:
+  = @referral.tracking_number
+%p
+  %b Date started:
+  = @referral.date_started
+%p
+  %b Staff time required:
+  = @referral.staff_time_required
+
+= link_to 'Edit', edit_clerk_referral_path(@referral)
+\|
+= link_to 'Back', clerk_referrals_path

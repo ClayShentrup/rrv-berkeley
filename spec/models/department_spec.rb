@@ -20,7 +20,7 @@ RSpec.describe(Department) do
 
     context('requires a saved record') do
       before { create(:department) }
-      
+
       it { is_expected.to validate_uniqueness_of(:name) }
     end
   end

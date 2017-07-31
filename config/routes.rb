@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   shallow do
     namespace(:clerk) do
       resources(:departments)
+      resources(:referrals)
     end
   end
 end

@@ -1,0 +1,50 @@
+%h1 Listing referrals
+
+%table
+  %thead
+    %tr
+      %th Referral type
+      %th Prioritization year
+      %th Meeting date
+      %th Agenda item number
+      %th Title
+      %th Recommendation
+      %th Sponsors
+      %th Department
+      %th Notes
+      %th Completed on
+      %th First year rank
+      %th Tracking number
+      %th Date started
+      %th Staff time required
+      %th Cost
+      %th Benefits
+      %th
+      %th
+      %th
+
+  %tbody
+    - @referrals.each do |referral|
+      %tr
+        %td= referral.referral_type
+        %td= referral.prioritization_year
+        %td= referral.meeting_date
+        %td= referral.agenda_item_number
+        %td= referral.title
+        %td= referral.recommendation
+        %td= referral.sponsors
+        %td= referral.department_name
+        %td= referral.notes
+        %td= referral.completed_on
+        %td= referral.first_year_rank
+        %td= referral.tracking_number
+        %td= referral.date_started
+        %td= referral.staff_time_required
+        %td= link_to 'Show', [:clerk, referral]
+        %td= link_to 'Edit', edit_clerk_referral_path(referral)
+        %td= link_to 'Destroy', [:clerk, referral], method: :delete,
+          data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Referral', new_clerk_referral_path

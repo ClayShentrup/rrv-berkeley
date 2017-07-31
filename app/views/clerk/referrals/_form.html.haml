@@ -1,0 +1,27 @@
+= simple_form_for [:clerk, @referral] do |f|
+  - if @referral.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@referral.errors.count, 'error')} prohibited this referral from being saved:"
+      %ul
+        - @referral.errors.full_messages.each do |message|
+          %li= message
+  = f.input(:referral_type,
+    collection: Referral.referral_types.keys,
+    include_blank: false,
+  )
+  = f.input(:prioritization_year)
+  = f.input(:meeting_date)
+  = f.input(:agenda_item_number)
+  = f.input(:title)
+  = f.input(:recommendation)
+  = f.input(:sponsors)
+  = f.association(:department, collection: Department.all, include_blank: false)
+  = f.input(:notes)
+  = f.input(:completed_on)
+  = f.input(:first_year_rank)
+  = f.input(:tracking_number)
+  = f.input(:date_started)
+  = f.input(:staff_time_required)
+
+  .actions
+    = f.submit 'Save'
